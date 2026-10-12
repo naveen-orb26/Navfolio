@@ -82,8 +82,9 @@ export async function POST(req: Request) {
       if (text.includes("project") || text.includes("fluxmind") || text.includes("erp") || text.includes("navfolio")) {
         return `Here are Naveen's featured engineering projects:
 
-- **[FluxMind](https://github.com/naveen-orb26/FluxMind)**: AI-powered microgrid energy orchestrator using ML forecasting and Google OR-Tools CP-SAT to optimize a 600 kWh battery storage bank across 96 daily intervals.
+- **[FluxMind](https://flux-mind-ten.vercel.app/)** ([GitHub](https://github.com/naveen-orb26/FluxMind)): AI-powered community energy orchestrator using ML forecasting and Google OR-Tools CP-SAT to optimize a 600 kWh battery storage bank across 96 daily intervals.
 - **[ERP-Veritas](https://github.com/naveen-orb26/ERP-Veritas)**: Modular enterprise resource planning system for manufacturing workflows with automated approval chains (React, Django, MySQL).
+- **[Veritas Trims Company](https://www.veritastrims.co.in/)**: Corporate portfolio showcase and digital apparel trims catalog for the manufacturing client (Private repository).
 - **[Navfolio](https://github.com/naveen-orb26/Navfolio)**: Personalized full-stack portfolio with multi-document RAG and Three.js 3D visualizations (Next.js 16, React 19).
 - **Kinetic Hardware Prototype**: Physical linkage model mechanically demonstrating eigenvalue and eigenvector transformations for ML intuition.`;
       }
@@ -134,8 +135,9 @@ CORE INSTRUCTIONS:
 4. CLICKABLE LINKS: When referring to items with links, include the exact Markdown links:
    - Pencil Sketching: [@gray.drift](https://www.instagram.com/gray.drift/)
    - Photography: [@lensxelegance](https://www.instagram.com/lensxelegance/)
-   - FluxMind: [GitHub](https://github.com/naveen-orb26/FluxMind)
+   - FluxMind: [Live Demo](https://flux-mind-ten.vercel.app/) · [GitHub](https://github.com/naveen-orb26/FluxMind)
    - ERP-Veritas: [GitHub](https://github.com/naveen-orb26/ERP-Veritas)
+   - Veritas Trims Company: [Live Website](https://www.veritastrims.co.in/) (Private Codebase)
    - Navfolio: [GitHub](https://github.com/naveen-orb26/Navfolio)
    - Edge PTQ Code: [GitHub](https://github.com/naveen-orb26/EdgeOptimizedPTQForRealtimePHMdevices)
    - UDCM H2Crop Code: [GitHub](https://github.com/naveen-orb26/UDCM_H2Crop)

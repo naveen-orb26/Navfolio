@@ -12,6 +12,7 @@ export interface Project {
   liveUrl?: string;
   featured: boolean;
   bentoSpan?: string; // CSS grid column/row span class
+  isPrivate?: boolean;
 }
 
 export interface SkillCategory {
@@ -130,8 +131,7 @@ export const DEVELOPER_PROFILE = {
         "Operating Systems & Computer Networks",
         "Database Management Systems (DBMS) & SQL",
         "Cloud Computing & Distributed Systems"
-      ],
-      thesisOrProject: "FLUXMIND: Autonomous Microgrid DER Dispatch Optimization & AI Agent"
+      ]
     },
     {
       level: "Senior Secondary (12th)",
@@ -359,7 +359,7 @@ export const DEVELOPER_PROFILE = {
       tech: ["Python", "Google OR-Tools", "CP-SAT", "ML Forecasting", "AI Agents", "Energy Storage"],
       metrics: ["96 Daily Dispatch Intervals", "600 kWh Battery Optimization", "Real-Time AI Supervisory Agent"],
       githubUrl: "https://github.com/naveen-orb26/FluxMind",
-      liveUrl: "#",
+      liveUrl: "https://flux-mind-ten.vercel.app/",
       featured: true,
       bentoSpan: "col-span-1 md:col-span-2 row-span-2"
     },
@@ -377,6 +377,19 @@ export const DEVELOPER_PROFILE = {
       bentoSpan: "col-span-1 md:col-span-1 row-span-1"
     },
     {
+      id: "veritas-trims-portal",
+      title: "Veritas Trims: Corporate Brand & Portfolio Portal",
+      tagline: "Production Apparel Trims Web Showcase & Client Catalog",
+      description: "Designed and deployed the official commercial portfolio website for Veritas Trims, an apparel manufacturing trims specialist. Features responsive product catalog showcases, industrial component galleries, and customer inquiry funnels.",
+      category: "Distributed Systems",
+      tech: ["Next.js", "React", "Tailwind CSS", "Production Deployment", "Responsive UI"],
+      metrics: ["Production Web Presence", "Industrial Product Catalog", "Private Proprietary"],
+      liveUrl: "https://www.veritastrims.co.in/",
+      isPrivate: true,
+      featured: false,
+      bentoSpan: "col-span-1 md:col-span-1 row-span-1"
+    },
+    {
       id: "navfolio-personalized-portfolio",
       title: "Navfolio: Personalized AI-Orchestrated Portfolio",
       tagline: "Modern Full-Stack Agentic Portfolio with Grounded RAG & Gemini 2.5",
@@ -387,7 +400,7 @@ export const DEVELOPER_PROFILE = {
       githubUrl: "https://github.com/naveen-orb26/Navfolio",
       liveUrl: "#hero",
       featured: true,
-      bentoSpan: "col-span-1 md:col-span-1 row-span-1"
+      bentoSpan: "col-span-1 md:col-span-2 row-span-1"
     },
     {
       id: "eigenvalues-hardware-model",
@@ -400,7 +413,7 @@ export const DEVELOPER_PROFILE = {
       githubUrl: "https://github.com/naveen-orb26/Eigen_vectors_proto",
       liveUrl: "#",
       featured: true,
-      bentoSpan: "col-span-1 md:col-span-3 row-span-1"
+      bentoSpan: "col-span-1 md:col-span-1 row-span-1"
     }
   ] as Project[],
 

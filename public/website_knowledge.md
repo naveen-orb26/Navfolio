@@ -45,7 +45,6 @@ This document contains the complete, authoritative knowledge base and ground-tru
   - Operating Systems & Distributed Systems
   - Database Management Systems (DBMS) & SQL
   - Cloud Computing, Networks & Information Security
-- **Capstone/Core Project**: FLUXMIND: Autonomous Microgrid DER Dispatch Optimization & AI Agent
 
 ### Senior Secondary Education (Class XII)
 - **Curriculum**: Senior School Certificate Examination — Class XII (Physics, Chemistry, Mathematics, Computer Science - PCMC)
@@ -70,6 +69,7 @@ This document contains the complete, authoritative knowledge base and ground-tru
 ### Project 1: FluxMind - AI-Powered Community Energy & Grid Orchestrator
 - **Category**: AI / Agentic OS / Distributed Optimization
 - **Tagline**: Predictive Microgrid Energy Optimization & Real-Time Battery Dispatch
+- **Live Application**: [https://flux-mind-ten.vercel.app/](https://flux-mind-ten.vercel.app/)
 - **GitHub Repository**: [https://github.com/naveen-orb26/FluxMind](https://github.com/naveen-orb26/FluxMind)
 - **Tech Stack**: Python, Google OR-Tools, CP-SAT Solver, Machine Learning Time-Series Forecasting, AI Agents, WebSockets, Renewable Energy Storage Simulation.
 - **Detailed Architecture & Capabilities**:
@@ -89,7 +89,18 @@ This document contains the complete, authoritative knowledge base and ground-tru
   - Implemented automated multi-level approval chains, role-based access control (RBAC), and high-throughput SQL indexing.
   - Key Performance Metrics: End-to-end multi-department workflow tracking, sub-100ms API latency, automated approval routing.
 
-### Project 3: Navfolio - Personalized AI-Orchestrated Portfolio
+### Project 3: Veritas Trims Company - Corporate Brand & Product Portfolio
+- **Category**: Distributed Systems & Production Web
+- **Tagline**: Commercial Web Presence & Apparel Trims Product Catalog
+- **Live Application**: [https://www.veritastrims.co.in/](https://www.veritastrims.co.in/)
+- **Repository Access**: Private / Proprietary Commercial Client Project
+- **Tech Stack**: Next.js, React, Tailwind CSS, Production Cloud Hosting, Responsive UI.
+- **Detailed Architecture & Capabilities**:
+  - Designed, built, and deployed the official public-facing corporate portfolio website for Veritas Trims, an apparel manufacturing trims supplier.
+  - Implemented responsive multi-category component catalogs (zippers, buttons, elastic, woven labels), high-resolution gallery displays, and direct client inquiry contact funnels.
+  - Serves as the public digital portal complementing the internal Veritas ERP system.
+
+### Project 4: Navfolio - Personalized AI-Orchestrated Portfolio
 - **Category**: AI / Agentic OS / Web Architecture
 - **Tagline**: Modern Full-Stack Agentic Portfolio with Grounded RAG & Google Gemini
 - **GitHub Repository**: [https://github.com/naveen-orb26/Navfolio](https://github.com/naveen-orb26/Navfolio)
