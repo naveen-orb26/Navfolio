@@ -107,7 +107,7 @@ export const DEVELOPER_PROFILE = {
     email: "naveenbs262@gmail.com", // 📍 EDIT: Your primary contact email
     phone: "+91 8618 00 6797", // 📍 Guarded by Aegis privacy filter
     github: "https://github.com/naveen-orb26", // 📍 EDIT: Your GitHub profile URL
-    linkedin: "https://linkedin.com/in/naveen-bs", // 📍 EDIT: Your LinkedIn profile URL
+    linkedin: "https://www.linkedin.com/in/naveen-b-s/",
     twitter: "https://x.com/naveen_ai", // 📍 EDIT: Your Twitter/X profile URL (or leave placeholder)
   },
 

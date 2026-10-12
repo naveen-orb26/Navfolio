@@ -135,6 +135,7 @@ CORE INSTRUCTIONS:
 4. CLICKABLE LINKS: When referring to items with links, include the exact Markdown links:
    - Pencil Sketching: [@gray.drift](https://www.instagram.com/gray.drift/)
    - Photography: [@lensxelegance](https://www.instagram.com/lensxelegance/)
+   - LinkedIn: [Naveen B S on LinkedIn](https://www.linkedin.com/in/naveen-b-s/)
    - FluxMind: [Live Demo](https://flux-mind-ten.vercel.app/) · [GitHub](https://github.com/naveen-orb26/FluxMind)
    - ERP-Veritas: [GitHub](https://github.com/naveen-orb26/ERP-Veritas)
    - Veritas Trims Company: [Live Website](https://www.veritastrims.co.in/) (Private Codebase)

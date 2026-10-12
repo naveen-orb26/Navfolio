@@ -19,7 +19,7 @@ This document contains the complete, authoritative knowledge base and ground-tru
 
 - **Primary Contact Email**: naveenbs262@gmail.com
 - **Official GitHub Profile**: [https://github.com/naveen-orb26](https://github.com/naveen-orb26)
-- **LinkedIn Profile**: [https://linkedin.com/in/naveen-bs](https://linkedin.com/in/naveen-bs)
+- **LinkedIn Profile**: [https://www.linkedin.com/in/naveen-b-s/](https://www.linkedin.com/in/naveen-b-s/)
 - **Fine Arts & Pencil Sketching Instagram Portfolio**: [@gray.drift](https://www.instagram.com/gray.drift/) (Direct Link: `https://www.instagram.com/gray.drift/`)
 - **Visual Photography Instagram Portfolio**: [@lensxelegance](https://www.instagram.com/lensxelegance/) (Direct Link: `https://www.instagram.com/lensxelegance/`)
 - **Personal Portfolio Repository**: [https://github.com/naveen-orb26/Navfolio](https://github.com/naveen-orb26/Navfolio)
