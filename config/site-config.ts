@@ -14,17 +14,20 @@ export const SITE_CONFIG = {
     email: DEVELOPER_PROFILE.contact.email,
   },
   starterPrompts: [
-    "What are Naveen's core AI skills?",
-    "Tell me about Nexus Agentic OS.",
-    "Why hire Naveen as an AI Systems Architect?",
-    "How does Naveen prevent prompt injection?",
-    "What is Naveen's experience with Three.js WebGL?"
+    "Tell me about Naveen's 3 research papers and ongoing publications.",
+    "What did Naveen accomplish during his internships at BRFL and ANU?",
+    "What are Naveen's leadership roles in Student Welfare and Rotaract?",
+    "Tell me about Naveen's education at VIT Chennai and Narayana.",
+    "What is FLUXMIND and how does the DER dispatch engine work?"
   ],
   navItems: [
     { label: "Overview", href: "#hero" },
-    { label: "AI Agent", href: "#ai-chat" },
     { label: "Projects", href: "#projects" },
     { label: "Tech Stack", href: "#tech-stack" },
-    { label: "Experience", href: "#experience" }
+    { label: "Education", href: "#education" },
+    { label: "Research", href: "#research" },
+    { label: "Experience", href: "#experience" },
+    { label: "Leadership", href: "#leadership" },
+    { label: "Hobbies & Skills", href: "#hobbies" }
   ]
 };

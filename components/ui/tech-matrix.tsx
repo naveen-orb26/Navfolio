@@ -2,15 +2,21 @@
 
 import React from 'react';
 import { DEVELOPER_PROFILE } from '@/config/profile-knowledge';
-import { Cpu, CheckCircle2, Sparkles, Terminal } from 'lucide-react';
+import { Cpu, CheckCircle2, Terminal } from 'lucide-react';
 
-interface TechMatrixProps {
-  onSelectSkillPrompt?: (prompt: string) => void;
-}
-
-export function TechMatrix({ onSelectSkillPrompt }: TechMatrixProps) {
+export function TechMatrix() {
   return (
-    <section id="tech-stack" className="w-full py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="tech-stack" className="relative w-full py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      {/* Ambient Section Nebula */}
+      <div 
+        className="absolute top-1/3 -left-20 w-[480px] h-[480px] rounded-full blur-[140px] pointer-events-none -z-10"
+        style={{ background: 'radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, rgba(14, 165, 233, 0.08) 50%, transparent 70%)' }}
+      />
+      <div 
+        className="absolute bottom-10 -right-20 w-[450px] h-[450px] rounded-full blur-[130px] pointer-events-none -z-10"
+        style={{ background: 'radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(20, 184, 166, 0.06) 50%, transparent 70%)' }}
+      />
+
       {/* Section Title */}
       <div className="flex flex-col items-center text-center space-y-3 mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 font-mono text-xs">
@@ -21,7 +27,7 @@ export function TechMatrix({ onSelectSkillPrompt }: TechMatrixProps) {
           Core Engineering Capabilities
         </h2>
         <p className="text-sm text-zinc-400 max-w-2xl font-sans">
-          Production technologies and frameworks utilized across Naveen's AI platforms and full-stack systems.
+          Production frameworks, programming languages, and toolchains utilized across Naveen&apos;s AI platforms and software systems.
         </p>
       </div>
 
@@ -65,18 +71,6 @@ export function TechMatrix({ onSelectSkillPrompt }: TechMatrixProps) {
                 </div>
               ))}
             </div>
-
-            {onSelectSkillPrompt && (
-              <button
-                onClick={() =>
-                  onSelectSkillPrompt(`What experience does Naveen have in ${category.category}?`)
-                }
-                className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs font-mono text-zinc-300 hover:text-white transition-all pt-2"
-              >
-                <Sparkles className="w-3 h-3 text-violet-400" />
-                <span>Ask AI about {category.category}</span>
-              </button>
-            )}
           </div>
         ))}
       </div>

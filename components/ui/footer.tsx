@@ -5,13 +5,9 @@ import { SITE_CONFIG } from '@/config/site-config';
 import { DEVELOPER_PROFILE } from '@/config/profile-knowledge';
 import { Bot, ShieldCheck, Heart, Github, Linkedin, Mail } from 'lucide-react';
 
-interface FooterProps {
-  onOpenChat: () => void;
-}
-
-export function Footer({ onOpenChat }: FooterProps) {
+export function Footer() {
   return (
-    <footer className="w-full border-t border-white/10 bg-[#09090b] text-zinc-400 py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="relative w-full border-t border-white/10 bg-[#09090b]/80 backdrop-blur-md text-zinc-400 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Brand & Persona Info */}
         <div className="flex flex-col items-center md:items-start space-y-2 text-center md:text-left">
@@ -20,7 +16,7 @@ export function Footer({ onOpenChat }: FooterProps) {
             <span>{DEVELOPER_PROFILE.name}</span>
           </div>
           <p className="text-xs text-zinc-400 max-w-sm">
-            Autonomous AI Developer Portfolio built with Next.js 15, Vercel AI SDK, Google Gemini 2.5, and procedural Three.js.
+            AI & Machine Learning Engineer Portfolio powered by Next.js 15, Vercel AI SDK, Google Gemini, and procedural WebGL.
           </p>
           <div className="flex items-center gap-2 pt-1 text-[11px] font-mono text-emerald-400">
             <ShieldCheck className="w-3.5 h-3.5" />
@@ -28,39 +24,33 @@ export function Footer({ onOpenChat }: FooterProps) {
           </div>
         </div>
 
-        {/* Action Button & Links */}
-        <div className="flex flex-col items-center md:items-end space-y-4">
-          <button
-            onClick={onOpenChat}
-            className="px-4 py-2 rounded-xl bg-violet-950/60 hover:bg-violet-900/60 border border-violet-500/30 text-xs font-mono text-violet-300 hover:text-white transition-all shadow-lg"
+        {/* Social Links */}
+        <div className="flex items-center gap-5 text-zinc-400 text-xs">
+          <a
+            href={SITE_CONFIG.links.github}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition-colors flex items-center gap-1.5"
+            aria-label="GitHub Profile"
           >
-            Launch Interactive AI Persona
-          </button>
-
-          <div className="flex items-center gap-4 text-zinc-400 text-xs">
-            <a
-              href={SITE_CONFIG.links.github}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-white transition-colors flex items-center gap-1"
-            >
-              <Github className="w-3.5 h-3.5" /> GitHub
-            </a>
-            <a
-              href={SITE_CONFIG.links.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-white transition-colors flex items-center gap-1"
-            >
-              <Linkedin className="w-3.5 h-3.5" /> LinkedIn
-            </a>
-            <a
-              href={`mailto:${SITE_CONFIG.links.email}`}
-              className="hover:text-white transition-colors flex items-center gap-1"
-            >
-              <Mail className="w-3.5 h-3.5" /> Email
-            </a>
-          </div>
+            <Github className="w-4 h-4" /> GitHub
+          </a>
+          <a
+            href={SITE_CONFIG.links.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition-colors flex items-center gap-1.5"
+            aria-label="LinkedIn Profile"
+          >
+            <Linkedin className="w-4 h-4" /> LinkedIn
+          </a>
+          <a
+            href={`mailto:${SITE_CONFIG.links.email}`}
+            className="hover:text-white transition-colors flex items-center gap-1.5"
+            aria-label="Send Email"
+          >
+            <Mail className="w-4 h-4" /> Email
+          </a>
         </div>
       </div>
 

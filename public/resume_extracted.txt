@@ -1,0 +1,96 @@
+=== PAGE 1 ===
+Engineering Architecture & Implementation
+Blueprint
+INTERACTIVE AI PERSONA PORTFOLIO SYSTEM · LINEAR / VERCEL MODERN
+STANDARD
+Target: Autonomous AI Agent
+Standard: Production Full-
+Stack
+Revision: 2026.4
+1. ARCHITECTURAL INTENT & USER EXPERIENCE PARADIGM
+This document speciﬁes the technical design, directory architecture, UI primitives, and security boundaries for deploying
+an interactive, modern portfolio. The system fuses a dark minimalist aesthetic with high-density Bento grids, an
+autonomous grounded AI agent persona, and GPU-eﬃcient Three.js WebGL visuals.
+Interactive Client
+Bento Grid + 3D Hero
+Prompt Bar / Cmd+K
+Next.js Edge API Route
+/api/chat (SSE Stream)
+Upstash Sliding Window
+Context Grounding Engine
+profile-knowledge.ts
+Anti-Injection Guardrails
+Gemini 2.5 Flash
+Sub-second Latency
+Vouching Persona Reply
+2. PRODUCTION TECHNOLOGY STACK
+Layer Package / Technology Engineering Rationale & Functional Scope
+App Framework Next.js 15 (App Router) React Server Components (RSC), native SEO optimization,
+zero-latency static rendering.
+UI & Tokens Tailwind CSS + shadcn/ui Design consistency, accessible Radix dialogs/drawers, ﬂuid
+dark-zinc palette styling.
+AI Streaming ai + @ai-sdk/google Vercel AI SDK handles streaming Server-Sent Events, abort
+controllers, and hook state.
+LLM Runtime Google Gemini 2.5 Flash Extreme TTFT, accurate strict-grounding execution, and cost-
+effective serving.
+Ambient 3D @react-three/fiber +
+drei
+Procedural shader mesh rendering; runs without heavy
+external GLTF 3D model downloads.
+Abuse Defense @upstash/ratelimit +
+Redis
+Edge-level sliding-window rate limiting (20 req/hr/IP)
+safeguarding API expenditure.
+3. CORE ARCHITECTURAL PRINCIPLES
+I. Grounded Advocacy Persona
+The agent acts as an optimistic advocate. It highlights technical
+rigor, measurable impact, and architecture depth. It answers
+exclusively from veriﬁed resume items and refuses unsupported
+claims.
+II. Performance & Zero Lag
+No heavy 3D loading screens. Procedural Three.js canvases
+load asynchronously via next/dynamic (SSR: false), ensuring
+initial DOM paint occurs in under 100ms.
+AI Portfolio Specification · Document for Autonomous Development Page 1 of 3
+
+=== PAGE 2 ===
+4. DIRECTORY BLUEPRINT & MODULE STRUCTURE
+The autonomous agent must construct the project matching this exact ﬁle hierarchy:
+       portfolio/ ├──  app/ │  ├──  api/chat/route.ts # Edge runtime API route with Upstash rate-limiting │  ├──  la
+      
+5. GROUND TRUTH & PROMPT ENGINEERING PROTOCOL (CONFIG/PROFILE-
+KNOWLEDGE.TS)
+Contains the veriﬁed engineering background and behavioral constraints for the persona:
+       export const DEVELOPER_PROFILE = { name: "B S Naveen", title: "AI/ML Systems & Full-Stack Software Engi
+      
+6. RATE-LIMITED STREAMING ROUTE (APP/API/CHAT/ROUTE.TS)
+       import { streamText } from 'ai'; import { google } from '@ai-sdk/google'; import { ratelimit } from '@/
+      
+AI Portfolio Specification · Document for Autonomous Development Page 2 of 3
+
+=== PAGE 3 ===
+7. PROCEDURAL THREE.JS COMPONENT (COMPONENTS/3D/AMBIENTMESH.TSX)
+Zero-asset procedural 3D visual featuring pointer reactivity and stateful distortion:
+       'use client'; import { useRef } from 'react'; import { useFrame } from '@react-three/fiber'; import { F
+      
+8. EXECUTION GUIDE FOR AUTONOMOUS DEVELOPER AGENTS
+The developer agent must execute the following sequential installation and veriﬁcation pipeline:
+       # 1. Project Initialization npx create-next-app@latest portfolio --typescript --tailwind --eslint --app
+      
+Autonomous Veriﬁcation & Quality Gate:
+1. Typecheck: Run npm run build to conﬁrm zero TypeScript compilation errors.
+2. Grounding Test: Send a test query ("Who are you?") to /api/chat and assert that the persona self-identiﬁes as Naveen's AI advocate
+with veriﬁed credentials.
+3. Guardrail Test: Query an unlisted topic ("What is Naveen's home phone?") and verify polite deﬂection without hallucination.
+9. ARCHITECTURAL ACCEPTANCE CHECKLIST
+Target Domain Speciﬁcation Standard Validation Criterion
+UI Aesthetics Linear / Vercel Dark Minimalist Background #09090b, hairline borders,
+clean typography.
+Security Sliding Window Rate-Limiting IP limited to 20 req/hr; 429 status code
+returned on excess.
+AI Persona Conﬁdent Grounded Advocate Strict grounding on
+DEVELOPER_PROFILE; zero hallucinated
+claims.
+3D Graphics Procedural WebGL Mesh Zero external 3D asset downloads; locked
+60 FPS performance.
+AI Portfolio Specification · Document for Autonomous Development Page 3 of 3

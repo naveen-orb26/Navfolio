@@ -1,14 +1,22 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { SITE_CONFIG } from '@/config/site-config';
-import { Bot, Sparkles, Command, Github, Linkedin } from 'lucide-react';
+import { Sparkles, Github, Linkedin } from 'lucide-react';
 
 interface HeaderProps {
   onOpenChat: (initialPrompt?: string) => void;
 }
 
 export function Header({ onOpenChat }: HeaderProps) {
+  const [isMac, setIsMac] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsMac(/(Mac|iPhone|iPod|iPad)/i.test(navigator.userAgent || navigator.platform || ''));
+    }
+  }, []);
+
   return (
     <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#09090b]/80 backdrop-blur-md transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -25,7 +33,7 @@ export function Header({ onOpenChat }: HeaderProps) {
 
           <div className="flex flex-col">
             <span className="font-semibold text-sm text-zinc-100 tracking-tight">{SITE_CONFIG.name}</span>
-            <span className="text-[11px] font-mono text-zinc-400 hidden sm:inline">AI/ML & Full-Stack Architect</span>
+            <span className="text-[11px] font-mono text-zinc-400 hidden sm:inline">AI/ML & Full-Stack Engineer</span>
           </div>
         </div>
 
@@ -42,17 +50,17 @@ export function Header({ onOpenChat }: HeaderProps) {
           ))}
         </nav>
 
-        {/* Action Controls: AI Chat Trigger & Social Links */}
+        {/* Action Controls: The Single Top Header AI Tab & Social Links */}
         <div className="flex items-center gap-3">
           <button
             onClick={() => onOpenChat()}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs font-mono text-zinc-200 hover:text-white transition-all shadow-sm group"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-violet-600/25 to-indigo-600/25 hover:from-violet-600/40 hover:to-indigo-600/40 border border-violet-500/35 hover:border-violet-400/60 text-xs text-zinc-100 hover:text-white transition-all shadow-md group cursor-pointer"
+            aria-label="Open AI Persona Chat (Ctrl+K or Cmd+K)"
           >
             <Sparkles className="w-3.5 h-3.5 text-violet-400 group-hover:rotate-12 transition-transform" />
-            <span className="hidden sm:inline">Ask AI Agent</span>
-            <span className="sm:hidden">AI</span>
-            <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] bg-zinc-900 border border-white/10 rounded text-zinc-400">
-              <Command className="w-2.5 h-2.5" /> K
+            <span className="font-medium font-sans">Ask AI</span>
+            <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono bg-zinc-950/80 border border-white/15 rounded text-zinc-400 group-hover:text-zinc-200">
+              {isMac ? '⌘K' : 'Ctrl K'}
             </kbd>
           </button>
 

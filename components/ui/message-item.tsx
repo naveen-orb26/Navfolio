@@ -48,7 +48,21 @@ export function MessageItem({ role, content, isStreaming }: MessageItemProps) {
 
         {/* Markdown Renderer */}
         <div className="prose prose-invert prose-sm max-w-none prose-p:leading-relaxed prose-pre:bg-zinc-950 prose-pre:border prose-pre:border-white/10 font-sans">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              a: ({ node, ...props }) => (
+                <a
+                  {...props}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors font-medium inline-flex items-center gap-1"
+                />
+              ),
+            }}
+          >
+            {content}
+          </ReactMarkdown>
         </div>
 
         {/* Streaming Indicator */}

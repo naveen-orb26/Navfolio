@@ -34,6 +34,13 @@ export function ChatDialog({
     setMessages,
   } = useChat({
     api: '/api/chat',
+    initialMessages: [
+      {
+        id: 'welcome-init',
+        role: 'assistant',
+        content: "Hi! I'm Naveen's AI advocate. Ask me anything about his engineering projects, research publications, technical skills, or background.",
+      },
+    ],
     onError: (err) => {
       console.error('Chat error:', err);
       setErrorMessage(err.message || 'An error occurred during response streaming.');
@@ -62,22 +69,20 @@ export function ChatDialog({
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isLoading]);
 
-  // Keyboard shortcut Cmd+K listener
+  // Keyboard shortcut Esc / Cmd+K / Ctrl+K listener to close modal
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
+      if (((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') || e.key === 'Escape') {
         if (isOpen) {
+          e.preventDefault();
           onClose();
-        } else {
-          // Open chat logic in parent
         }
-      } else if (e.key === 'Escape' && isOpen) {
-        onClose();
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
@@ -101,7 +106,7 @@ export function ChatDialog({
                   <ShieldCheck className="w-3 h-3" /> Grounded
                 </span>
               </div>
-              <p className="text-xs text-zinc-400">Interactive persona grounded exclusively on verified resume data.</p>
+              <p className="text-xs text-zinc-400">Interactive persona grounded exclusively on verified resume and website data.</p>
             </div>
           </div>
 
@@ -115,43 +120,32 @@ export function ChatDialog({
 
         {/* Message Container */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {messages.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-full text-center p-6 space-y-4">
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 text-violet-400">
-                <Sparkles className="w-8 h-8" />
-              </div>
-              <div className="max-w-md space-y-2">
-                <h3 className="font-semibold text-zinc-100 text-base">Ask Naveen's AI Persona</h3>
-                <p className="text-xs text-zinc-400">
-                  Explore Naveen's engineering achievements, AI architectures, project metrics, or prompt security setup.
-                </p>
-              </div>
+          {messages.map((m, idx) => (
+            <MessageItem
+              key={m.id || idx}
+              role={m.role as 'user' | 'assistant'}
+              content={m.content}
+              isStreaming={isLoading && idx === messages.length - 1 && m.role === 'assistant'}
+            />
+          ))}
 
-              <div className="w-full max-w-lg pt-4 space-y-2">
-                <span className="text-[11px] font-mono text-zinc-500">Suggested Starter Prompts:</span>
-                <div className="grid grid-cols-1 gap-2 text-left">
-                  {SITE_CONFIG.starterPrompts.map((prompt, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => append({ role: 'user', content: prompt })}
-                      className="px-3 py-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-xs font-sans text-zinc-300 hover:text-white transition-all text-left flex items-center justify-between"
-                    >
-                      <span>{prompt}</span>
-                      <Sparkles className="w-3 h-3 text-violet-400 opacity-60" />
-                    </button>
-                  ))}
-                </div>
+          {/* Show suggested starter prompts when conversation is fresh */}
+          {messages.length <= 1 && (
+            <div className="pt-2 pb-1 space-y-2">
+              <span className="text-[11px] font-mono text-zinc-500">Suggested Prompts:</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
+                {SITE_CONFIG.starterPrompts.map((prompt, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => append({ role: 'user', content: prompt })}
+                    className="px-3 py-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-xs font-sans text-zinc-300 hover:text-white transition-all text-left flex items-center justify-between"
+                  >
+                    <span className="line-clamp-1">{prompt}</span>
+                    <Sparkles className="w-3 h-3 text-violet-400 opacity-60 shrink-0 ml-1" />
+                  </button>
+                ))}
               </div>
             </div>
-          ) : (
-            messages.map((m, idx) => (
-              <MessageItem
-                key={m.id || idx}
-                role={m.role as 'user' | 'assistant'}
-                content={m.content}
-                isStreaming={isLoading && idx === messages.length - 1 && m.role === 'assistant'}
-              />
-            ))
           )}
 
           {/* Error Banner */}
@@ -203,7 +197,7 @@ export function ChatDialog({
             )}
           </form>
           <div className="flex items-center justify-between pt-2 px-1 text-[10px] font-mono text-zinc-400">
-            <span>Powered by Vercel AI SDK & Google Gemini 2.5 Flash</span>
+            <span>Powered by Vercel AI SDK & Google Gemini</span>
             <span>Press Esc to close</span>
           </div>
         </div>
